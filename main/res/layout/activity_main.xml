@@ -1,29 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:orientation="vertical"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.rynel.myapplication.MainActivity">
 
-    <EditText
-        android:id="@+id/etValue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <TextView
-        android:textSize="20sp"
-        android:textColor="@color/colorAccent"
-        android:id="@+id/tvValue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:onClick="goToSecond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Second Activity"/>
+        android:text="Linear layout"/>
 
+    <EditText
+        android:id="@+id/etName"
+        android:hint="First name"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/etLastName"
+        android:hint="Last Name"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:onClick="savePerson"
+            android:id="@+id/btnSaveToList"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Save to list"/>
+
+        <Button
+            android:onClick="printPerson"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Print names"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btnSaveToList"
+            android:layout_toRightOf="@+id/btnSaveToList"
+            android:id="@+id/btnPrintPerson" />
+
+        <Button
+            android:id="@+id/btnGoToSecond"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="goToSecond"
+            android:text="Go To Second"
+            android:layout_toRightOf="@+id/btnPrintPerson"
+            android:layout_toEndOf="@+id/btnPrintPerson" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/cartman"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ffagbb4"/>
+
+    <FrameLayout
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:src="@drawable/ffagbb4">
+
+        <ImageView
+            android:id="@+id/cartman2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/ffagbb4"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Slurp"
+            android:textSize="20sp"/>
+    </FrameLayout>
 
 </LinearLayout>
